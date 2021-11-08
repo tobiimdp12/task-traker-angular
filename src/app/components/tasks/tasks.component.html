@@ -1,0 +1,14 @@
+
+
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<!--[task] es una propiedad del componente app-task-item-->
+
+
+<app-task-item 
+    *ngFor="let task of tasks"
+    [task]="task" 
+    (onDeleteTask)="deleteTask(task)" 
+    (onToggleReminder)="toggleReminder(task)">
+</app-task-item>
+<div *ngIf="tasks == undefined || tasks.length == 0">Is Empty</div>
+
